@@ -1,0 +1,2510 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>دِلوَر | صنایع چوبی دست‌ساز</title>
+
+<style>
+
+/* RESET */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f8f5f0;
+    color:#3e3026;
+    line-height:1.8;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(248,245,240,.97);
+    border-bottom:1px solid #e6ddd3;
+}
+
+nav{
+    max-width:1150px;
+    margin:auto;
+    padding:17px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:bold;
+    color:#5b402d;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    font-size:15px;
+    color:#5b4a3c;
+}
+
+.nav-links a:hover{
+    color:#8a6245;
+}
+
+.cart-button{
+    border:none;
+    background:#6b4f3a;
+    color:white;
+    padding:10px 16px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.cart-button:hover{
+    background:#4f3929;
+}
+
+#cart-count{
+    display:inline-block;
+    min-width:20px;
+    margin-right:5px;
+    padding:1px 6px;
+    border-radius:20px;
+    background:white;
+    color:#6b4f3a;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:620px;
+    max-width:1150px;
+    margin:auto;
+    padding:70px 25px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:55px;
+}
+
+.hero-text h1{
+    font-size:54px;
+    color:#4f3929;
+    margin-bottom:15px;
+}
+
+.hero-text h2{
+    font-size:23px;
+    font-weight:normal;
+    color:#795b43;
+    margin-bottom:18px;
+}
+
+.hero-text p{
+    max-width:520px;
+    color:#6d5b4d;
+    margin-bottom:28px;
+    font-size:17px;
+}
+
+.hero-button{
+    display:inline-block;
+    background:#6b4f3a;
+    color:white;
+    padding:13px 25px;
+    border-radius:12px;
+}
+
+.hero-button:hover{
+    background:#4f3929;
+}
+
+.hero-image img{
+    width:75%;
+    height:auto;
+    display:block;
+    border-radius:28px;
+}
+
+
+/* ================= GENERAL SECTION ================= */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:85px 25px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:32px;
+    color:#4f3929;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#806d5d;
+}
+
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.product{
+    background:white;
+    border:1px solid #e8ded4;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+}
+
+
+/* بخش عکس محصول */
+
+.product-images{
+    position:relative;
+    width:100%;
+    height:280px;
+    background:#f8f5f0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+
+/* اندازه عکس */
+
+.product-images img{
+    width:100%;
+    max-width:100%;
+    height:280px;
+
+    object-fit:contain;
+
+    display:block;
+}
+
+
+/* دکمه های اسلاید */
+
+.slide-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:38px;
+    height:38px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(79,57,41,.85);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:25px;
+
+    z-index:5;
+}
+
+.slide-btn:hover{
+    background:#4f3929;
+}
+
+.slide-next{
+    right:10px;
+}
+
+.slide-prev{
+    left:10px;
+}
+
+
+/* شماره اسلاید */
+
+.slide-number{
+    position:absolute;
+
+    bottom:8px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:rgba(0,0,0,.55);
+
+    color:white;
+
+    padding:2px 10px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    z-index:5;
+}
+
+
+/* ================= PRODUCT INFO ================= */
+
+.product-info{
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+
+    flex:1;
+}
+
+.product-info h3{
+    font-size:20px;
+    color:#4f3929;
+    margin-bottom:8px;
+}
+
+.product-info p{
+    color:#756457;
+    font-size:14px;
+
+    margin-bottom:12px;
+}
+
+.price{
+    display:block;
+
+    color:#6b4f3a;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    margin-top:auto;
+
+    margin-bottom:14px;
+}
+
+
+/* ADD TO CART */
+
+.add-to-cart{
+    width:100%;
+
+    padding:12px 18px;
+
+    background:#6b4f3a;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:14px;
+}
+
+.add-to-cart:hover{
+    background:#4f3929;
+}
+
+.add-to-cart:active{
+    transform:scale(.98);
+}
+
+
+/* ناموجود */
+
+.out-of-stock{
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ddd6d0;
+
+    color:#756b64;
+
+    cursor:not-allowed;
+
+    font-size:14px;
+}
+
+
+/* ================= COLORS ================= */
+
+.color-title{
+    font-size:14px;
+    color:#5b4a3c;
+
+    margin-bottom:8px;
+}
+
+.color-options{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:14px;
+}
+
+.color-option{
+    border:1px solid #d8cbc0;
+
+    background:white;
+
+    padding:7px 12px;
+
+    border-radius:9px;
+
+    cursor:pointer;
+
+    font-size:13px;
+}
+
+.color-option.active{
+    background:#6b4f3a;
+
+    color:white;
+
+    border-color:#6b4f3a;
+}
+
+
+/* ================= PRODUCT 10 ================= */
+
+.choice-box{
+    margin-bottom:15px;
+}
+
+.choice-box label{
+    display:block;
+
+    background:#f6f1ec;
+
+    padding:9px 12px;
+
+    border-radius:10px;
+
+    margin-bottom:7px;
+
+    cursor:pointer;
+
+    font-size:13px;
+}
+
+.choice-box input{
+    margin-left:6px;
+}
+
+
+/* ================= IMPORTANT ================= */
+
+.important-section{
+    padding-top:20px;
+    padding-bottom:70px;
+}
+
+.important-box{
+    background:#fffaf5;
+
+    border:1px solid #e2d2c2;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+}
+
+.important-box h3{
+    color:#5b402d;
+
+    margin-bottom:10px;
+
+    font-size:21px;
+}
+
+.important-box p{
+    color:#756457;
+
+    font-size:14px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:55px;
+}
+
+.about-image img{
+    width:75%;
+
+    height:auto;
+
+    display:block;
+
+    border-radius:25px;
+}
+
+.about-text h2{
+    font-size:34px;
+
+    color:#4f3929;
+
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#6d5b4d;
+
+    font-size:16px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    max-width:700px;
+
+    margin:auto;
+
+    background:white;
+
+    border:1px solid #e8ded4;
+
+    border-radius:25px;
+
+    padding:35px;
+}
+
+.contact-box h2{
+    color:#4f3929;
+
+    font-size:30px;
+
+    margin-bottom:10px;
+}
+
+.contact-box > p{
+    color:#756457;
+
+    margin-bottom:25px;
+}
+
+.contact-items{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+}
+
+.contact-link{
+    display:inline-block;
+
+    background:#f1ebe4;
+
+    color:#5b402d;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+}
+
+.contact-link:hover{
+    background:#e4d8cb;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#4f3929;
+
+    color:white;
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    margin-top:30px;
+}
+
+footer p{
+    font-size:14px;
+
+    opacity:.9;
+}
+
+
+/* ================= CART ================= */
+
+.cart-overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:2000;
+
+    display:none;
+}
+
+.cart-overlay.active{
+    display:block;
+}
+
+.cart{
+    position:fixed;
+
+    top:0;
+
+    right:-430px;
+
+    width:400px;
+
+    max-width:92%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:2100;
+
+    box-shadow:-5px 0 25px rgba(0,0,0,.12);
+
+    transition:right .35s ease;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.cart.active{
+    right:0;
+}
+
+.cart-header{
+    padding:20px;
+
+    border-bottom:1px solid #e8ded4;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.cart-header h2{
+    color:#4f3929;
+
+    font-size:22px;
+}
+
+.close-cart{
+    border:none;
+
+    background:transparent;
+
+    font-size:28px;
+
+    color:#6b4f3a;
+
+    cursor:pointer;
+}
+
+.cart-items{
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:20px;
+}
+
+.empty-cart{
+    text-align:center;
+
+    color:#806d5d;
+
+    padding:50px 10px;
+}
+
+.cart-item{
+    border-bottom:1px solid #eee4db;
+
+    padding:15px 0;
+}
+
+.cart-item-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:8px;
+}
+
+.cart-item-name{
+    font-weight:bold;
+
+    color:#4f3929;
+}
+
+.remove-item{
+    border:none;
+
+    background:transparent;
+
+    color:#a15b4d;
+
+    cursor:pointer;
+
+    font-size:13px;
+}
+
+.cart-item-price{
+    color:#806d5d;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+}
+
+.quantity-controls{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.quantity-controls button{
+    width:30px;
+
+    height:30px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#eee6de;
+
+    color:#4f3929;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+
+.quantity-controls span{
+    min-width:20px;
+
+    text-align:center;
+
+    font-weight:bold;
+}
+
+.cart-footer{
+    border-top:1px solid #e8ded4;
+
+    padding:20px;
+
+    background:#fcfaf8;
+}
+
+.cart-total{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#4f3929;
+}
+
+.clear-cart{
+    width:100%;
+
+    border:1px solid #cdbeb0;
+
+    background:white;
+
+    color:#6b4f3a;
+
+    padding:11px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    margin-top:10px;
+}
+
+.clear-cart:hover{
+    background:#f4eee8;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+    .hero{
+        grid-template-columns:1fr;
+
+        padding-top:50px;
+    }
+
+    .hero-text{
+        text-align:center;
+    }
+
+    .hero-text p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .about-text{
+        text-align:center;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    nav{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .nav-links{
+        gap:10px;
+    }
+
+    .nav-links a{
+        font-size:11px;
+    }
+
+    .cart-button{
+        padding:8px 10px;
+
+        font-size:11px;
+    }
+
+    .hero{
+        padding:45px 18px;
+
+        min-height:auto;
+    }
+
+    .hero-text h1{
+        font-size:42px;
+    }
+
+    .hero-text h2{
+        font-size:19px;
+    }
+
+    section{
+        padding:65px 18px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    /*
+    در موبایل هم عکس‌ها
+    بیشتر از این اندازه نمی‌شوند
+    */
+
+    .product-images{
+        height:280px;
+    }
+
+    .product-images img{
+        height:280px;
+    }
+
+    .about-image img{
+        height:auto;
+    }
+
+    .contact-box{
+        padding:25px 18px;
+    }
+
+    .cart{
+        width:360px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<nav>
+
+<a href="#home" class="logo">
+دِلوَر
+</a>
+
+
+<div class="nav-links">
+
+<a href="#products">
+محصولات
+</a>
+
+<a href="#about">
+درباره دِلوَر
+</a>
+
+<a href="#contact">
+تماس
+</a>
+
+
+<button class="cart-button" onclick="openCart()">
+
+🛒 سبد خرید
+
+<span id="cart-count">
+۰
+</span>
+
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main id="home">
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+<h1>
+دِلوَر
+</h1>
+
+<h2>
+صنایع چوبی دست‌ساز
+</h2>
+
+<p>
+محصولات چوبی با طراحی ساده، طبیعی و ماندگار؛
+ساخته‌شده با دقت و توجه به جزئیات.
+</p>
+
+<a href="#products" class="hero-button">
+مشاهده محصولات
+</a>
+
+</div>
+
+
+<div class="hero-image">
+
+<img
+src="wood1.jpg"
+alt="محصولات چوبی دِلوَر">
+
+</div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="products">
+
+
+<div class="section-title">
+
+<h2>
+محصولات دِلوَر
+</h2>
+
+<p>
+مجموعه‌ای از محصولات دست‌ساز چوبی
+</p>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- ================= PRODUCT 1 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+src="product1.jpg"
+alt="بشقاب چوبی">
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+بشقاب چوبی
+</h3>
+
+<p>
+بشقاب چوبی دست‌ساز با چوب طبیعی و پرداخت ظریف.
+</p>
+
+<span class="price">
+۳۷۰٬۰۰۰ تومان
+</span>
+
+
+<button
+class="add-to-cart"
+onclick="addToCart('بشقاب چوبی',370000)">
+
+افزودن به سبد خرید
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT 2 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+src="product2.jpg"
+alt="کاسه چوبی">
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+کاسه چوبی
+</h3>
+
+<p>
+طراحی ساده و مناسب استفاده روزمره.
+</p>
+
+<span class="price">
+۳۰۰٬۰۰۰ تومان
+</span>
+
+
+<button
+class="add-to-cart"
+onclick="addToCart('کاسه چوبی',300000)">
+
+افزودن به سبد خرید
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT 3 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+id="image3"
+src="product3-1.jpg"
+alt="گلدان چوبی">
+
+
+<button
+class="slide-btn slide-prev"
+onclick="changeSlide(3,-1)">
+
+‹
+
+</button>
+
+
+<button
+class="slide-btn slide-next"
+onclick="changeSlide(3,1)">
+
+›
+
+</button>
+
+
+<span
+class="slide-number"
+id="number3">
+
+۱ / ۴
+
+</span>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+گلدان چوبی
+</h3>
+
+<p>
+چهار نمونه گلدان چوبی با قیمت یکسان.
+</p>
+
+<span class="price">
+۳۵۰٬۰۰۰ تومان
+</span>
+
+
+<button
+class="add-to-cart"
+onclick="addToCart('گلدان چوبی',350000)">
+
+افزودن به سبد خرید
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT 4 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+src="product4.jpg"
+alt="سینی چوبی">
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+سینی چوبی
+</h3>
+
+<p>
+سینی چوبی دست‌ساز با طراحی ساده و طبیعی.
+</p>
+
+<span class="price">
+۱٬۴۰۰٬۰۰۰ تومان
+</span>
+
+
+<button
+class="out-of-stock"
+disabled>
+
+ناموجود
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT 5 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+id="image5"
+src="product5-1.jpg"
+alt="شمعدان">
+
+
+<button
+class="slide-btn slide-prev"
+onclick="changeSlide(5,-1)">
+
+‹
+
+</button>
+
+
+<button
+class="slide-btn slide-next"
+onclick="changeSlide(5,1)">
+
+›
+
+</button>
+
+
+<span
+class="slide-number"
+id="number5">
+
+۱ / ۲
+
+</span>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+شمعدان
+</h3>
+
+<p>
+شمعدان چوبی دست‌ساز با طراحی ساده و زیبا.
+</p>
+
+<span class="price">
+۶۰۰٬۰۰۰ تومان
+</span>
+
+
+<button
+class="add-to-cart"
+onclick="addToCart('شمعدان',600000)">
+
+افزودن به سبد خرید
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT 6 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+id="image6"
+src="product6-1.jpg"
+alt="قندان">
+
+
+<button
+class="slide-btn slide-prev"
+onclick="changeSlide(6,-1)">
+
+‹
+
+</button>
+
+
+<button
+class="slide-btn slide-next"
+onclick="changeSlide(6,1)">
+
+›
+
+</button>
+
+
+<span
+class="slide-number"
+id="number6">
+
+۱ / ۷
+
+</span>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+قندان
+</h3>
+
+<p>
+قندان چوبی دست‌ساز با طراحی ساده و کاربردی.
+</p>
+
+<span class="price">
+۶۰۰٬۰۰۰ تومان
+</span>
+
+
+<button
+class="add-to-cart"
+onclick="addToCart('قندان',600000)">
+
+افزودن به سبد خرید
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT 7 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+src="product7.jpg"
+alt="آباژور بزرگ">
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+آباژور بزرگ
+</h3>
+
+<p>
+آباژور چوبی بزرگ با ارتفاع ۱۶۰ سانتی‌متر.
+</p>
+
+<span class="price">
+۴٬۵۰۰٬۰۰۰ تومان
+</span>
+
+
+<button
+class="add-to-cart"
+onclick="addToCart('آباژور بزرگ ۱۶۰ سانتی‌متری',4500000)">
+
+افزودن به سبد خرید
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT 8 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+id="image8"
+src="product8-yellow.jpg"
+alt="آباژور کوچک">
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+آباژور کوچک
+</h3>
+
+<p>
+سه آباژور کوچک با رنگ‌های مختلف پایه.
+</p>
+
+
+<div class="color-title">
+انتخاب رنگ پایه:
+</div>
+
+
+<div class="color-options">
+
+
+<button
+class="color-option active"
+onclick="selectColor(this,'زرد')">
+
+زرد
+
+</button>
+
+
+<button
+class="color-option"
+onclick="selectColor(this,'سرمه‌ای')">
+
+سرمه‌ای
+
+</button>
+
+
+<button
+class="color-option"
+onclick="selectColor(this,'گلبهی')">
+
+گلبهی
+
+</button>
+
+
+</div>
+
+
+<span class="price">
+۱٬۶۰۰٬۰۰۰ تومان
+</span>
+
+
+<button
+class="add-to-cart"
+onclick="addLampToCart()">
+
+افزودن آباژور به سبد خرید
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT 9 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+id="image9"
+src="product9-1.jpg"
+alt="وردنه چوبی">
+
+
+<button
+class="slide-btn slide-prev"
+onclick="changeSlide(9,-1)">
+
+‹
+
+</button>
+
+
+<button
+class="slide-btn slide-next"
+onclick="changeSlide(9,1)">
+
+›
+
+</button>
+
+
+<span
+class="slide-number"
+id="number9">
+
+۱ / ۲
+
+</span>
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+وردنه چوبی
+</h3>
+
+<p>
+وردنه چوبی دست‌ساز مناسب آشپزی.
+</p>
+
+<span class="price">
+۶۵۰٬۰۰۰ تومان
+</span>
+
+
+<button
+class="add-to-cart"
+onclick="addToCart('وردنه چوبی',650000)">
+
+افزودن به سبد خرید
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT 10 ================= -->
+
+<div class="product">
+
+
+<div class="product-images">
+
+<img
+src="product10.jpg"
+alt="ست سطل زباله و جا دستمالی">
+
+</div>
+
+
+<div class="product-info">
+
+<h3>
+ست سطل زباله و جا دستمالی
+</h3>
+
+<p>
+امکان سفارش به صورت ست یا جداگانه.
+</p>
+
+
+<div class="choice-box">
+
+
+<label>
+
+<input
+type="radio"
+name="product10"
+value="set"
+checked
+onchange="updateProduct10Price()">
+
+ست — ۲٬۸۵۰٬۰۰۰ تومان
+
+</label>
+
+
+<label>
+
+<input
+type="radio"
+name="product10"
+value="bin"
+onchange="updateProduct10Price()">
+
+سطل زباله — ۱٬۲۰۰٬۰۰۰ تومان
+
+</label>
+
+
+<label>
+
+<input
+type="radio"
+name="product10"
+value="tissue"
+onchange="updateProduct10Price()">
+
+جا دستمالی — ۷۵۰٬۰۰۰ تومان
+
+</label>
+
+
+</div>
+
+
+<span
+class="price"
+id="product10-price">
+
+۲٬۸۵۰٬۰۰۰ تومان
+
+</span>
+
+
+<button
+class="add-to-cart"
+onclick="addProduct10ToCart()">
+
+افزودن به سبد خرید
+
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= IMPORTANT ================= -->
+
+<section class="important-section">
+
+
+<div class="important-box">
+
+<h3>
+⚠️ توضیحات مهم
+</h3>
+
+<p>
+به دلیل متنوع بودن طرح چوب و رنگ چوب ممکن است محصولی که شما سفارش می‌دهید
+با عکس آن در سایت متفاوت باشد.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section
+class="about"
+id="about">
+
+
+<div class="about-image">
+
+<img
+src="about.jpg"
+alt="درباره دِلوَر">
+
+</div>
+
+
+<div class="about-text">
+
+<h2>
+درباره دِلوَر
+</h2>
+
+<p>
+دِلوَر مجموعه‌ای برای ساخت محصولات چوبی دست‌ساز است؛
+جایی که چوب طبیعی با طراحی ساده و دقت در جزئیات
+به محصولی کاربردی و ماندگار تبدیل می‌شود.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section
+id="contact"
+class="contact">
+
+
+<div class="section-title">
+
+<h2>
+تماس با دِلوَر
+</h2>
+
+<p>
+برای سفارش و دریافت اطلاعات بیشتر با ما در ارتباط باشید.
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h2>
+در ارتباط باشیم 🤎
+</h2>
+
+<p>
+برای سفارش محصولات دِلوَر می‌توانید از طریق
+شماره تماس یا اینستاگرام با ما در ارتباط باشید.
+</p>
+
+
+<div class="contact-items">
+
+
+<a
+class="contact-link"
+href="tel:09161136589">
+
+📞 ۰۹۱۶۱۱۳۶۵۸۹
+
+</a>
+
+
+<a
+class="contact-link"
+href="https://www.instagram.com/dell_var/"
+target="_blank"
+rel="noopener">
+
+📷 @dell_var
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© دِلوَر | صنایع چوبی دست‌ساز
+</p>
+
+</footer>
+
+
+<!-- ================= CART OVERLAY ================= -->
+
+<div
+class="cart-overlay"
+id="cart-overlay"
+onclick="closeCart()">
+
+</div>
+
+
+<!-- ================= CART ================= -->
+
+<aside
+class="cart"
+id="cart">
+
+
+<div class="cart-header">
+
+<h2>
+سبد خرید
+</h2>
+
+
+<button
+class="close-cart"
+onclick="closeCart()">
+
+×
+
+</button>
+
+</div>
+
+
+<div
+class="cart-items"
+id="cart-items">
+
+<div class="empty-cart">
+
+سبد خرید شما خالی است.
+
+</div>
+
+</div>
+
+
+<div class="cart-footer">
+
+
+<div class="cart-total">
+
+<span>
+مبلغ کل:
+</span>
+
+<span id="cart-total">
+۰ تومان
+</span>
+
+</div>
+
+
+<button
+class="clear-cart"
+onclick="clearCart()">
+
+خالی کردن سبد خرید
+
+</button>
+
+
+</div>
+
+</aside>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* ================= CART ================= */
+
+let cart =
+JSON.parse(
+localStorage.getItem("delvarCart")
+) || [];
+
+
+function toPersianNumber(number){
+
+return number
+.toString()
+.replace(
+/\d/g,
+function(digit){
+
+return "۰۱۲۳۴۵۶۷۸۹"[digit];
+
+});
+
+}
+
+
+function formatPrice(number){
+
+return toPersianNumber(
+number.toLocaleString("en-US")
+)
++
+" تومان";
+
+}
+
+
+function addToCart(name,price){
+
+const existingProduct =
+cart.find(
+function(item){
+
+return item.name === name;
+
+});
+
+
+if(existingProduct){
+
+existingProduct.quantity += 1;
+
+}
+
+else{
+
+cart.push({
+
+name:name,
+
+price:price,
+
+quantity:1
+
+});
+
+}
+
+
+saveCart();
+
+renderCart();
+
+openCart();
+
+}
+
+
+/* ================= PRODUCT 8 ================= */
+
+let selectedLampColor = "زرد";
+
+
+function selectColor(button,color){
+
+selectedLampColor = color;
+
+
+document
+.querySelectorAll(".color-option")
+.forEach(
+function(btn){
+
+btn.classList.remove("active");
+
+});
+
+
+button.classList.add("active");
+
+
+const image =
+document.getElementById("image8");
+
+
+if(color === "زرد"){
+
+image.src =
+"product8-yellow.jpg";
+
+}
+
+
+if(color === "سرمه‌ای"){
+
+image.src =
+"product8-navy.jpg";
+
+}
+
+
+if(color === "گلبهی"){
+
+image.src =
+"product8-pink.jpg";
+
+}
+
+}
+
+
+function addLampToCart(){
+
+addToCart(
+
+"آباژور کوچک - "
++
+selectedLampColor,
+
+1600000
+
+);
+
+}
+
+
+/* ================= PRODUCT 10 ================= */
+
+function getProduct10Choice(){
+
+return document
+.querySelector(
+'input[name="product10"]:checked'
+)
+.value;
+
+}
+
+
+function updateProduct10Price(){
+
+const choice =
+getProduct10Choice();
+
+
+const price =
+document.getElementById(
+"product10-price"
+);
+
+
+if(choice === "set"){
+
+price.textContent =
+"۲٬۸۵۰٬۰۰۰ تومان";
+
+}
+
+
+if(choice === "bin"){
+
+price.textContent =
+"۱٬۲۰۰٬۰۰۰ تومان";
+
+}
+
+
+if(choice === "tissue"){
+
+price.textContent =
+"۷۵۰٬۰۰۰ تومان";
+
+}
+
+}
+
+
+function addProduct10ToCart(){
+
+const choice =
+getProduct10Choice();
+
+
+if(choice === "set"){
+
+addToCart(
+"ست سطل زباله و جا دستمالی",
+2850000
+);
+
+}
+
+
+if(choice === "bin"){
+
+addToCart(
+"سطل زباله",
+1200000
+);
+
+}
+
+
+if(choice === "tissue"){
+
+addToCart(
+"جا دستمالی",
+750000
+);
+
+}
+
+}
+
+
+/* ================= SLIDES ================= */
+
+const slides = {
+
+
+3:[
+
+"product3-1.jpg",
+
+"product3-2.jpg",
+
+"product3-3.jpg",
+
+"product3-4.jpg"
+
+],
+
+
+5:[
+
+"product5-1.jpg",
+
+"product5-2.jpg"
+
+],
+
+
+6:[
+
+"product6-1.jpg",
+
+"product6-2.jpg",
+
+"product6-3.jpg",
+
+"product6-4.jpg",
+
+"product6-5.jpg",
+
+"product6-6.jpg",
+
+"product6-7.jpg"
+
+],
+
+
+9:[
+
+"product9-1.jpg",
+
+"product9-2.jpg"
+
+]
+
+};
+
+
+const currentSlide = {
+
+3:0,
+
+5:0,
+
+6:0,
+
+9:0
+
+};
+
+
+function changeSlide(
+productNumber,
+direction
+){
+
+const list =
+slides[productNumber];
+
+
+currentSlide[productNumber]
++= direction;
+
+
+if(
+currentSlide[productNumber] < 0
+){
+
+currentSlide[productNumber] =
+list.length - 1;
+
+}
+
+
+if(
+currentSlide[productNumber]
+>= list.length
+){
+
+currentSlide[productNumber] = 0;
+
+}
+
+
+document.getElementById(
+"image" + productNumber
+).src =
+list[
+currentSlide[productNumber]
+];
+
+
+document.getElementById(
+"number" + productNumber
+).textContent =
+
+toPersianNumber(
+currentSlide[productNumber] + 1
+)
+
++
+
+" / "
+
++
+
+toPersianNumber(
+list.length
+);
+
+}
+
+
+/* ================= CART FUNCTIONS ================= */
+
+function increaseQuantity(index){
+
+cart[index].quantity++;
+
+saveCart();
+
+renderCart();
+
+}
+
+
+function decreaseQuantity(index){
+
+if(
+cart[index].quantity > 1
+){
+
+cart[index].quantity--;
+
+}
+
+else{
+
+cart.splice(index,1);
+
+}
+
+
+saveCart();
+
+renderCart();
+
+}
+
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+saveCart();
+
+renderCart();
+
+}
+
+
+function clearCart(){
+
+cart=[];
+
+saveCart();
+
+renderCart();
+
+}
+
+
+function saveCart(){
+
+localStorage.setItem(
+
+"delvarCart",
+
+JSON.stringify(cart)
+
+);
+
+}
+
+
+function renderCart(){
+
+const cartItems =
+document.getElementById(
+"cart-items"
+);
+
+
+const cartCount =
+document.getElementById(
+"cart-count"
+);
+
+
+const cartTotal =
+document.getElementById(
+"cart-total"
+);
+
+
+if(cart.length === 0){
+
+cartItems.innerHTML = `
+
+<div class="empty-cart">
+
+سبد خرید شما خالی است.
+
+</div>
+
+`;
+
+}
+
+else{
+
+cartItems.innerHTML =
+
+cart.map(
+function(item,index){
+
+return `
+
+<div class="cart-item">
+
+<div class="cart-item-top">
+
+<span class="cart-item-name">
+
+${item.name}
+
+</span>
+
+
+<button
+class="remove-item"
+onclick="removeItem(${index})">
+
+حذف
+
+</button>
+
+</div>
+
+
+<div class="cart-item-price">
+
+${formatPrice(item.price)}
+
+</div>
+
+
+<div class="quantity-controls">
+
+
+<button
+onclick="increaseQuantity(${index})">
+
++
+
+</button>
+
+
+<span>
+
+${toPersianNumber(item.quantity)}
+
+</span>
+
+
+<button
+onclick="decreaseQuantity(${index})">
+
+−
+
+</button>
+
+
+</div>
+
+</div>
+
+`;
+
+}
+)
+
+.join("");
+
+}
+
+
+const totalQuantity =
+cart.reduce(
+function(total,item){
+
+return total + item.quantity;
+
+},
+0
+);
+
+
+const totalPrice =
+cart.reduce(
+function(total,item){
+
+return total
++
+(item.price * item.quantity);
+
+},
+0
+);
+
+
+cartCount.textContent =
+toPersianNumber(
+totalQuantity
+);
+
+
+cartTotal.textContent =
+formatPrice(
+totalPrice
+);
+
+}
+
+
+function openCart(){
+
+document
+.getElementById("cart")
+.classList.add("active");
+
+
+document
+.getElementById("cart-overlay")
+.classList.add("active");
+
+}
+
+
+function closeCart(){
+
+document
+.getElementById("cart")
+.classList.remove("active");
+
+
+document
+.getElementById("cart-overlay")
+.classList.remove("active");
+
+}
+
+
+renderCart();
+
+</script>
+
+
+</body>
+
+</html>
